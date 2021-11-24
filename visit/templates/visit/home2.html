@@ -1,0 +1,68 @@
+{% extends 'base1.html' %} {% load static %} {% block content %}
+
+
+<style>
+body{
+    background:black;
+}
+.emp-profile{
+    color:white;
+    background:rgb(30,30,30)
+}
+span{
+     text-align: center;
+     font-size:35px;
+}
+.emp{
+color:grey;
+font-size:30px;
+font-weight: bold;
+}
+</style>
+{% include 'visit/navbar3.html' %}
+
+<div style="margin:0 100px 0 100px" class="pt-5">
+<div class="container-fluid "> 
+<div class="row ">
+        {% for visitor in visitor1 %}
+            <div class="col-md-4">
+                  <div class="card-box emp-profile">
+                    <span style="color:gold;font-weight: bold;">
+                    {{visitor.name}}
+                    </span>
+                    <hr>
+                    <span class="emp">
+                    Contact
+                    </span>
+                    <span>
+                    {{visitor.contact}}
+                    </span>
+                    <span class="emp">
+                    Email
+                    
+                    </span>
+                    <span style="font-size:30px;">
+                    {{visitor.email}}
+                    
+                    </span>
+                    <span class="emp">
+                    Date Visited
+                    
+                    </span>
+                    <span>
+                    {{visitor.date}}
+                    
+                    </span>
+                    <span class="emp">
+                    Purpose
+                    </span>
+                    <span>
+                    {{visitor.purpose}}
+                    </span>                    
+                    </div>
+                  </div>
+        {% endfor %}
+</div>
+       </div></div>       
+
+{% endblock content %}
